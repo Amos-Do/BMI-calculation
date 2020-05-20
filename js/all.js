@@ -157,6 +157,7 @@ function deleteAllData() {
     bmiData = [];
     localStorage.removeItem('bmiData');
     updataRecord(bmiData);
+    result.querySelector('.value').textContent = '看結果';
     result.setAttribute('class', 'result');
     result.style.border = 'none';
     result.style.color = '#ffffff';
