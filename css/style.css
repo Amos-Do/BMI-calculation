@@ -1,0 +1,309 @@
+input, button, select, optgroup, textarea {
+    margin: 0px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    
+    /* -webkit-appearance: none;會產生checkbox消失 */
+    /* Safari 和 Chrome 常用於 iOS 下移除內建樣式 */
+    -moz-appearance: none;
+    /* FireFox */
+    appearance: none;
+    /*以下移除 Chrome 產生的按鈕陰影*/
+    outline-style: none;
+    outline-width: 0px;
+    border: none;
+    border-style: none;
+    text-shadow: none;
+    -webkit-user-select: text;
+    outline-color: transparent;
+    box-shadow: none;
+}
+
+body {
+    font-family:-apple-system,BlinkMacSystemFont,"Microsoft JhengHei UI","Segoe UI","Roboto","Helvetica Neue", Arial, sans-serif,"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #4A4A4A;
+    background: #424242;
+    padding: 0 20px;
+}
+@media (max-width: 767px) {
+    body {
+        padding: 0 5px;
+    }
+}
+
+.d-flex {
+    display: flex;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-column {
+    flex-direction: column;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.align-items-center {
+    align-items: center;
+}
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+.wrap {
+    max-width: 1024px;
+    margin: 30px auto;
+    background:white;
+    border-radius: 10px;
+}
+
+.user-info,.record {
+    width: 50%;
+    padding: 30px;
+}
+@media (max-width: 768px) {
+    .user-info,.record {
+        padding: 10px;
+    }
+}
+@media (max-width: 767px) {
+    .user-info,.record {
+        width: 98%;
+        margin: 2%;
+    }
+    .user-info {
+        border-bottom: 1px solid #ccc;
+    }
+}
+.user-info .logo {
+    text-align: center;
+    padding: 50px 0;
+}
+.user-info .cm,.user-info .kg {
+    margin: 0 10px 30px;
+}
+.user-info input {
+    width: 100%;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 2px solid rgb(241, 152, 68);
+    background: #fdfdfd;
+    padding: 4px 5px;
+    margin-top: 10px;
+}
+.result {
+    width: 120px;
+    height: 120px;
+    font-size: 20px;
+    color: white;
+    background: rgb(241, 152, 68);
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    margin: 20px 0;
+    transform: translatex(0);
+}
+.result:hover {
+    box-shadow: 0 1px 6px 3px rgb(247, 164, 86);
+}
+.result:active {
+    background: rgb(211, 128, 50);
+    box-shadow: none;
+}
+.result .bmi,
+.result .refresh,
+.result .bmi-result{
+    display: none;
+}
+
+.result.show-result {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    /* color: #86D73F; */
+    background: transparent;
+    /* border: 6px solid #86D73E; */
+    border-radius: 50%;
+    margin: 20px 0;
+    cursor: default;
+    transform: translatex(-47%);
+}
+.result.show-result:hover,
+.result.show-result:active {
+    box-shadow: none;
+    background: transparent;
+}
+.show-result .value {
+    font-size: 32px;
+}
+.show-result .bmi {
+    display: block;
+    font-size: 14px;
+}
+.show-result .refresh {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    /* background: #86D73E; */
+    position: absolute;
+    right: 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.show-result .bmi-result {
+    display: block;
+    max-width: 200px;
+    font-size: 32px;
+    text-align: left;
+    position: absolute;
+    top: 35px;
+    left: 130px;
+    right: -150px;
+}
+
+.record {
+    margin: 10px 0;
+    border-left: 1px solid #ccc;
+    overflow-y: auto;
+}
+.record h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #424242;
+}
+.delet-all {
+    float: right;
+    font-size: 14px;
+    padding: 8px;
+    color: white;
+    background: rgb(241, 152, 68);
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+    .delet-all {
+        font-size: 7px;
+    }
+}
+.delet-all:hover {
+    background: rgb(231, 131, 37);
+}
+
+.record-content {
+    clear: both;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.card {
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    opacity: .99;
+}
+.card .color-side {
+    width: 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 10px 0 0 10px;
+    transition: width 0.3s;
+}
+.card:hover .color-side {
+    width: 120px;
+}
+.card .card-main {
+    padding: 5px 20px;
+    margin: 5px 0;
+    border-right: 1px solid #ccc;
+    transition: color 0.3s;
+}
+.card:hover .card-main {
+    color: white;
+}
+.card-main p {
+    margin-bottom: 5px;
+}
+.card-main .bmi-value {
+    width: 79px;
+    font-size: 20px;
+}
+.card-main .bmi-value span {
+    font-size: 12px;
+    margin: 3px;
+}
+.card-main .time {
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 10px;
+}
+@media (max-width: 767px) {
+    .card .color-side {
+        width: 5px;
+    }
+    .card:hover .color-side {
+        width: 101px;
+    }
+    .card .card-main {
+        padding: 5px 15px;
+    }
+    .card-main .bmi-value {
+        width: 70px;
+        font-size: 16px;
+    }
+    .card-main .bmi-text {
+        font-size: 12px;
+    }
+    .card-main .time {
+        font-size: 6px;
+    }
+}
+
+.card-info {
+    width: 100%;
+    padding: 5px 10px 5px 20px;
+    margin: 5px 0;
+}
+.card-record {
+    flex-grow: 1;
+}
+.weight {
+    padding-left: 0;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+}
+.height {
+    padding-left: 20px;
+}
+.card-record p {
+    margin-bottom: 10px;
+}
+.card-delet {
+    flex-basis: 10%;
+    font-size: 28px;
+    text-align: center;
+    line-height: 68px;
+}
+.card-delet i {
+    padding: 10px;
+    cursor: pointer;
+}
+.card-delet i:hover {
+    color: rgb(231, 131, 37);
+}
+
+@media (max-width: 767px) {
+    .card-info {
+        padding: 5px 2px 5px 10px;
+    }
+    .card-record {
+        font-size: 12px;
+    }
+}
