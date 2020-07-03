@@ -2,76 +2,76 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BMI Calculation</title>
-    <link rel="stylesheet" href="css/reset-css.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BMI Calculation</title>
+  <link rel="stylesheet" href="css/reset-css.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <div class="wrap d-flex flex-wrap">
-        <div class="user-info d-flex flex-column align-items-center">
-            <div class="logo">
-                <img src="images/BMICLogo.png" alt="">
-            </div>
-            <form id="inputInfo">
-              <div class="d-flex justify-content-center">
-                <div class="cm">
-                    <label for="cm">身高 cm</label><br>
-                    <input type="text" name="cm" id="inputCm" placeholder="請輸入身高">
-                </div>
-                <div class="kg">
-                    <label for="kg">體重 kg</label><br>
-                    <input type="text" name="kg" id="inputKg" placeholder="請輸入體重">
-                </div>
-              </div>
-            </form>
-            <button class="result">
-                <p class="value">看結果</p>
-                <p class="bmi">BMI</p>
-                <div class="refresh"><i class="fa fa-refresh" aria-hidden="true"></i></div>
-                <p class="bmi-result">理想</p>
-            </button>
-
+  <div class="wrap d-flex flex-wrap">
+    <div class="user-info d-flex flex-column align-items-center">
+      <div class="logo">
+        <img src="images/BMICLogo.png" alt="">
+      </div>
+      <form id="inputInfo">
+        <div class="d-flex justify-content-center">
+          <div class="cm">
+            <label for="cm">身高 cm</label><br>
+            <input type="text" name="cm" id="inputCm" placeholder="請輸入身高">
+          </div>
+          <div class="kg">
+            <label for="kg">體重 kg</label><br>
+            <input type="text" name="kg" id="inputKg" placeholder="請輸入體重">
+          </div>
         </div>
-        <div class="record">
-            <h2>BMI 紀錄</h2>
-            <div class="delet-all">
-                清除所有紀錄
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-            </div>
-            <div class="record-content d-flex flex-column-reverse">
-                <div class="card d-flex">
-                    <div class="color-side"></div>
-                    <div class="card-main">
-                        <p class="bmi-value">25 <span>BMI</span></p>
-                        <p class="bmi-text">理想</p>
-                        <p class="time">2020/05/19</p>
-                    </div>
-                    <div class="card-info ">
-                        <div class="card-record d-flex align-items-center">
-                            <div class="weight">
-                                <p>weight</p>
-                                <p>70 kg</p>
-                            </div>
-                            <div class="height">
-                                <p>height</p>
-                                <p>180 cm</p>
-                            </div>
-                        </div>
-                        <div class="card-delet"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-                    </div>
-                </div>
-                
-            </div>
+      </form>
+      <button class="result">
+        <p class="value">看結果</p>
+        <p class="bmi">BMI</p>
+        <div class="refresh"><i class="fa fa-refresh" aria-hidden="true"></i></div>
+        <p class="bmi-result">理想</p>
+      </button>
 
-
-        </div>
     </div>
+    <div class="record">
+      <h2>BMI 紀錄</h2>
+      <div class="delet-all">
+        清除所有紀錄
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+      </div>
+      <div class="record-content d-flex flex-column-reverse">
+        <div class="card d-flex">
+          <div class="color-side"></div>
+          <div class="card-main">
+            <p class="bmi-value">25 <span>BMI</span></p>
+            <p class="bmi-text">理想</p>
+            <p class="time">2020/05/19</p>
+          </div>
+          <div class="card-info ">
+            <div class="card-record d-flex align-items-center">
+              <div class="weight">
+                <p>weight</p>
+                <p>70 kg</p>
+              </div>
+              <div class="height">
+                <p>height</p>
+                <p>180 cm</p>
+              </div>
+            </div>
+            <div class="card-delet"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
 
 
 
@@ -81,7 +81,7 @@
 
 
 
-    <script src="js/all.js"></script>
+  <script src="js/all.js"></script>
 </body>
 
 </html>
