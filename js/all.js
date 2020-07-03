@@ -68,10 +68,10 @@ function addData(e) {
     let cmText = inputCm.value;
     let kgText = inputKg.value;
     let bmiNum = countBmi(cmText, kgText);
-    if (cmText === '' || kgText === '' ) { 
-        alert('請輸入資料。')
-        return; 
-    };
+    if (result.querySelector('.value').textContent !== '看結果') {
+      alert('請重新輸入資料。')
+      return; 
+    }
     let bmiIndex = checkBmi(bmiNum);
     let day = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
     let bmi = {
@@ -143,7 +143,6 @@ function updataRecord(items) {
 function deleteOneData(e) {
     let nowNodeName = e.target.nodeName;
     let dataIndex = e.target.parentNode.dataset.index;
-    console.log(dataIndex);
     if (nowNodeName !== 'I') {return; };
     bmiData.splice(dataIndex,1);
     localStorage.setItem('bmiData', JSON.stringify(bmiData));
@@ -164,7 +163,6 @@ function deleteAllData() {
 // 清除結果的 btn
 function reFreshBtn(e) {
   e.stopPropagation();
-  console.log('你按到 refresh 了');
   result.querySelector('.value').textContent = '看結果';
   result.setAttribute('class', 'result');
   result.style.border = 'none';
