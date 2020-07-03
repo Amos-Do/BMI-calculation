@@ -1,5 +1,6 @@
 let inputCm = document.getElementById('inputCm');
 let inputKg = document.getElementById('inputKg');
+let inputInfo = document.getElementById('inputInfo');
 let result = document.querySelector('.result');
 let reFresh = result.querySelector('.refresh')
 let recordList = document.querySelector('.record-content');
@@ -30,6 +31,7 @@ let bmiContent = [
 ]
 
 result.addEventListener('click', addData);
+reFresh.addEventListener('click', reFreshBtn);
 inputKg.addEventListener('keydown', enterAdd);
 recordList.addEventListener('click', deleteOneData);
 deleteAll.addEventListener('click', deleteAllData);
@@ -62,7 +64,7 @@ function checkBmi(bmi) {
 
 // 新增資料到 resuletBtn updataRecord and localstorage
 function addData(e) {
-    e.preventDefault();
+    e.stopPropagation();
     let cmText = inputCm.value;
     let kgText = inputKg.value;
     let bmiNum = countBmi(cmText, kgText);
@@ -93,9 +95,7 @@ function addData(e) {
     result.style.border = `6px solid ${bmiContent[bmi.bmiIndex].color}`;
     result.style.color = bmiContent[bmi.bmiIndex].color;
     reFresh.style.background = bmiContent[bmi.bmiIndex].color;
-
-    inputCm.value = '';
-    inputKg.value = '';
+    
 }
 
 // Enter in
@@ -157,9 +157,18 @@ function deleteAllData() {
     bmiData = [];
     localStorage.removeItem('bmiData');
     updataRecord(bmiData);
-    result.querySelector('.value').textContent = '看結果';
-    result.setAttribute('class', 'result');
-    result.style.border = 'none';
-    result.style.color = '#ffffff';
-    reFresh.style.background = 'rgb(211, 128, 50)';
+    reFreshBtn();
+    
+}
+
+// 清除結果的 btn
+function reFreshBtn(e) {
+  e.stopPropagation();
+  console.log('你按到 refresh 了');
+  result.querySelector('.value').textContent = '看結果';
+  result.setAttribute('class', 'result');
+  result.style.border = 'none';
+  result.style.color = '#ffffff';
+  reFresh.style.background = 'rgb(211, 128, 50)';
+  inputInfo.reset();
 }
