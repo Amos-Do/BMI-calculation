@@ -1,6 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# mac os
 .DS_Store
+*/.DS_Store
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
