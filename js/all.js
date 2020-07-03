@@ -69,7 +69,9 @@ function addData(e) {
     let kgText = inputKg.value;
     let bmiNum = countBmi(cmText, kgText);
     if (result.querySelector('.value').textContent !== '看結果') {
-      alert('請重新輸入資料。')
+      return; 
+    } else if ( cmText === '' || kgText === '' ) { 
+      alert('請輸入資料。')
       return; 
     }
     let bmiIndex = checkBmi(bmiNum);
